@@ -1,0 +1,28 @@
+group 'com.mingyuan.common'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+repositories {
+    mavenCentral()
+}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+    compile 'com.android.tools.build:gradle:2.1.0'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
