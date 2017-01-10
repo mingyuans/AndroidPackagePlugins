@@ -18,15 +18,7 @@ class AndroidPackagePlugin implements Plugin<Project> {
 
     private void preparePackageExtension(Project target) {
         PackageExtension extension = target.extensions.create("packageExtension",PackageExtension.class);
-
-        Properties properties = new Properties();
-        properties.load(target.file("gradle.properties").newInputStream())
-
-        extension.jarBaseName = properties.getProperty("PKG_JAR_BASE_NAME")
-        extension.jarVersion = properties.getProperty("PKG_VERSION")
-        extension.metaProperties = properties.getProperty("PKG_METAS")
-        extension.mergeJarFiles = properties.getProperty("PKG_MERGE_JARS")
-        extension.delOriginJarEnable = properties.getProperty("PKG_DEL_ORIGIN_JAR")
+        extension.loadPackageConfig(target);
     }
 
     private void preparePackageTask(Project target) {
