@@ -24,7 +24,6 @@ public class PackageAndroidJarTask extends Jar {
         PackageExtension extension = (PackageExtension) target.getExtensions()
                 .getByName("packageExtension");
 
-        prepareManifest(extension);
 
         File archiveFile = extension.getArchiveFile(getProject());
         deleteOldArchiveFileIfExist(archiveFile);
@@ -38,8 +37,9 @@ public class PackageAndroidJarTask extends Jar {
         for (String excludeFile : EXCLUDE_FILES) {
             exclude(excludeFile);
         }
-        settingMergeFiles(target,extension);
 
+        prepareManifest(extension);
+        settingMergeFiles(target,extension);
         setBaseName(extension.jarBaseName);
         setVersion(extension.jarVersion);
         setExtension("jar");
@@ -114,8 +114,4 @@ public class PackageAndroidJarTask extends Jar {
             archiveDirFile.mkdirs();
         }
     }
-
-
-
-
 }

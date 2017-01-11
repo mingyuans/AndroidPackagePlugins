@@ -9,7 +9,7 @@ public class PackageExtension {
     public String jarBaseName = "android_lib";
     public String jarVersion = "";
     public String dstDirName = "artifacts";
-    public boolean delOriginJarEnable = true;
+    public boolean delOriginJarEnable = false;
     public Map<String,String> metaProperties = null;
     public String[] mergeJarFiles = null;
 
