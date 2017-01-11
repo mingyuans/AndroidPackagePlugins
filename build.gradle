@@ -1,15 +1,24 @@
 group 'com.mingyuan.common'
-version '1.0-SNAPSHOT'
+version '1.0.00'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies{
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+    }
+}
 
 apply plugin: 'groovy'
 apply plugin: 'maven-publish'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'com.jfrog.bintray'
 
 repositories {
     mavenCentral()
 }
-
 
 publishing {
     publications {
@@ -19,10 +28,64 @@ publishing {
     }
 }
 
+def siteUrl = "http://www.mingyuans.me"
+def gitUrl = "https://github.com/mingyuans/CommonGradlePlugins.git"
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'jar'
+                // Add your description here
+                name 'Android Common Gradle Plugins' //项目描述
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'mingyuans'    //填写的一些基本信息
+                        name 'yanxq'
+                        email 'yanxqwork@gmail.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newInputStream())
+// bintray 配置
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        userOrg = "mingyuans"
+        repo = "maven"
+        name = "com.mingyuan.gradle"    //发布到JCenter上的项目名字
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
+
 dependencies {
     compile gradleApi()
     compile localGroovy()
     compile 'org.codehaus.groovy:groovy-all:2.4.4'
-    compile 'com.android.tools.build:gradle:2.1.0'
+    compile 'net.sf.proguard:proguard-gradle:5.2.1'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

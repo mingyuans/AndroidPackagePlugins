@@ -4,8 +4,6 @@ import org.gradle.api.Project
 import org.gradle.api.tasks.TaskAction
 import proguard.gradle.ProGuardTask
 
-import java.text.ParseException
-
 /**
  *
  * Created by yanxq on 17/1/10.
