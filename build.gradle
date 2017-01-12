@@ -1,12 +1,12 @@
 group 'com.mingyuan.common'
-version '1.0.00'
+version project.PLUGIN_VERSION
 
 buildscript {
     repositories {
         jcenter()
     }
     dependencies{
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 }
 

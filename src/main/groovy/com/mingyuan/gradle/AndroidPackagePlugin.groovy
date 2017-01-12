@@ -22,8 +22,13 @@ class AndroidPackagePlugin implements Plugin<Project> {
     }
 
     private void preparePackageTask(Project target) {
-        target.tasks.create("packageProguardAndroidJar",PackageProguardAndroidJarTask.class)
-        target.tasks.create("packageAndroidJar",PackageAndroidJarTask.class)
+        target.tasks.create("packageAndroidJar",
+                PackageAndroidJarTask.class)
+                .dependsOn("bundleRelease");
+
+        target.tasks.create("packageProguardAndroidJar",
+                PackageProguardAndroidJarTask.class)
+                .dependsOn("packageAndroidJar");
     }
 
 }
