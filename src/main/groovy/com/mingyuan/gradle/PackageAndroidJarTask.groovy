@@ -44,7 +44,6 @@ public class PackageAndroidJarTask extends Jar {
         setVersion(extension.jarVersion);
         setExtension("jar");
         setDestinationDir(new File(target.getProjectDir(),extension.getArchiveFileDir()))
-
         startBuild();
     }
 
