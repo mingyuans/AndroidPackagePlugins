@@ -1,6 +1,6 @@
-package com.mingyuan.gradle
+package com.mingyuans.gradle
 
-import com.mingyuan.gradle.exception.PackageException
+import com.mingyuans.gradle.exception.PackageException
 import org.gradle.api.Project
 import org.gradle.api.java.archives.Attributes
 import org.gradle.api.tasks.ParallelizableTask
@@ -16,7 +16,7 @@ import java.util.zip.ZipFile
 @ParallelizableTask
 public class PackageAndroidJarTask extends Jar {
 
-    private static final String[] EXCLUDE_FILES = ["**/R.class","**/R/*.class",] as String[]
+    private static final String[] EXCLUDE_FILES = ["**/R.class","**/R/*.class","**/R\$*.class",] as String[]
 
     @TaskAction
     public void onTaskAction() {

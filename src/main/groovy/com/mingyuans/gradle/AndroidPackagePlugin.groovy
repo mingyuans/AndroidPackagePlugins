@@ -1,9 +1,7 @@
-package com.mingyuan.gradle;
+package com.mingyuans.gradle;
 
 import org.gradle.api.Project
 import org.gradle.api.Plugin
-import org.gradle.api.Task
-
 
 /**
  * Created by yanxq on 17/1/10.

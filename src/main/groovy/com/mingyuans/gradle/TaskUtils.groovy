@@ -1,4 +1,4 @@
-package com.mingyuan.gradle;
+package com.mingyuans.gradle;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package com.mingyuan.gradle.exception
+package com.mingyuans.gradle.exception
 
 /**
  * Created by yanxq on 17/1/10.

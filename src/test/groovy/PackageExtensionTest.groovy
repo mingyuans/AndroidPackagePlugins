@@ -1,5 +1,4 @@
-import com.mingyuan.gradle.PackageAndroidJarTask
-import com.mingyuan.gradle.PackageExtension
+import com.mingyuans.gradle.PackageExtension
 
 /**
  * Created by yanxq on 17/1/10.

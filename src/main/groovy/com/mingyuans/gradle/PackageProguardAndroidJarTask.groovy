@@ -1,4 +1,4 @@
-package com.mingyuan.gradle
+package com.mingyuans.gradle
 
 import org.gradle.api.Project
 import org.gradle.api.tasks.TaskAction

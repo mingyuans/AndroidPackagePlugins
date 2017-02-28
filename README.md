@@ -8,11 +8,11 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.mingyuan.android:gradle:1.0.02'
+        classpath 'com.mingyuans.android:package:1.0.04'
     }
 }
 
-apply plugin: 'com.mingyuan.package'
+apply plugin: 'com.mingyuans.package'
 
 ```
 
