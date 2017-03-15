@@ -90,7 +90,7 @@ bintray {
     override = true
     pkg {
         repo = "maven"
-        name = "android-gradle"	//发布到JCenter上的项目名字
+        name = "android-package"	//发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
