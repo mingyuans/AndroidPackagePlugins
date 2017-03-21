@@ -22,11 +22,13 @@ class AndroidPackagePlugin implements Plugin<Project> {
     private void preparePackageTask(Project target) {
         target.tasks.create("packageAndroidJar",
                 PackageAndroidJarTask.class)
-                .dependsOn("bundleRelease");
+                .dependsOn("bundleRelease")
+                .group("package");
 
         target.tasks.create("packageProguardAndroidJar",
                 PackageProguardAndroidJarTask.class)
-                .dependsOn("packageAndroidJar");
+                .dependsOn("packageAndroidJar")
+                .group("package");
     }
 
 }
