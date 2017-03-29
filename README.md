@@ -1,5 +1,7 @@
-## 这是什么
-一个 Android Gradle Plugins，目前提供便捷的 Android Library 工程打包成 jar 的功能。
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)[ ![Download](https://api.bintray.com/packages/mingyuan/maven/android-package/images/download.svg) ](https://bintray.com/mingyuan/maven/android-package/_latestVersion)  
+
+## Summary
+这是一个 Android Gradle Plugins，能够将 Android Library 工程打包成具备指定名称的 jar，并存放于指定目录中 。
 
 ## 依赖配置
 ```
@@ -8,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.mingyuans.android:package:1.0.04'
+        classpath 'com.mingyuans.android:package:1.0.05'
     }
 }
 
@@ -49,4 +51,19 @@ or
 
 ```
 
+## License  
+```
+Copyright 2016-2017 Mingyuans
 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
